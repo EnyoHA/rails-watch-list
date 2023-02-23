@@ -1,12 +1,12 @@
 class BookmarksController < ApplicationController
-  before_action :find_list
+  before_action :find_list, only: [:new, :create]
 
-  def show
-    @bookmarks = Bookmark.find(params[:id])
-  end
+  # def show
+  #   @bookmarks = Bookmark.find(params[:id])
+  # end
 
   def new
-    @list = List.find(params[:list_id])
+    # @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
   end
 
