@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     #   resources :movies
     # end
   end
-  resources :movies
+  # resources :movies
   resources :bookmarks
 end
