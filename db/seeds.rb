@@ -21,12 +21,14 @@ def film_dataset
   films = RestClient.get("http://tmdb.lewagon.com/movie/top_rated?api_key=#{api_data[:key]}")
   films_array = JSON.parse(films)["results"]
   # puts films_array
+  base_url = "https://image.tmdb.org/t/p/original"
   films_array.each do |film|
     Movie.create(
       title: film["title"],
       # genre: film["genres"][0]["name"]
       overview: film["overview"],
-      poster_url: film["poster_path"]
+      poster_url: "#{base_url}#{film["poster_path"]}",
+      rating: film["vote_average"]
     )
   end
 end
