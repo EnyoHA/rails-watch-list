@@ -10,6 +10,7 @@
     <li class="list-group-item"><%= bookmark.comment %></li>
     <% image_url = bookmark.movie.poster_url %>
     <li class="list-group-item"><%= image_tag(image_url, class: 'image') %></li>
+    <li class="list-group-item"><%= bookmark.movie.title %></li>
     <li class="list-group-item"><%= bookmark.movie.overview %></li>
      <%= link_to "Delete",
     bookmark_path(bookmark),
